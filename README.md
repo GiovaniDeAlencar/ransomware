@@ -4,7 +4,6 @@
 
 [!\[Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge\&logo=python\&logoColor=yellow)](https://www.python.org/)
 [!\[Kali Linux](https://img.shields.io/badge/Kali\_Linux-%2300A300?style=for-the-badge\&logo=kali-linux\&logoColor=white)](https://www.kali.org/)
-[!\[GitHub](https://img.shields.io/badge/GitHub-lehidavet-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/lehidavet)
 [!\[Cybersecurity](https://img.shields.io/badge/Cybersecurity-DIO-red?style=for-the-badge\&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUiIGhlaWdodD0iNDUiIHZpZXdCb3g9IjAgMCA0NSA0NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTguNzIgMjguNjhjMC0uMjgtLjIzLS41Mi0uNTEtLjUySDE1LjY3Yy0uMjggMC0uNTEuMjQtLjUxLjUydi41M2MwIC4yOC4yMy41MS41MS41MWgxMi41NGMuMjggMC0uNTEuMjQtLjUxLjUydi0uNTN6IiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0iTTE4LjcyIDE4Ljk1YzAgLS4yOC0uMjMtLjUyLS41MS0uNTJIMTUuNjdjLS4yOCAwLS41MS4yNC0uNTEuNTJ2NS4yOGMwIC4yOC4yMy41MS41MS41MWgxMi41NGMuMjggMC0uNTEuMjQtLjUxLjUydjUuMjhjMCAuMjguMjMuNTEuNTEuNDFoMi41NGMyLjgzIDAgNS4xNS0yLjMyIDUuMTUtNS4xNVMyMS41NSAxOC45NSAxOC43MiAxOC45NXoiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=)](https://www.dio.me/)
 
 </div>
